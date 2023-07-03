@@ -42,7 +42,7 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format" })
 --vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- replace all current word
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
 -- make current file executable
 --vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 

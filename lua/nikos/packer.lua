@@ -123,4 +123,6 @@ return require('packer').startup(function(use)
     -- command completion
     use 'smolck/command-completion.nvim'
 
+    -- lsp-signature
+    use 'ray-x/lsp_signature.nvim'
 end)

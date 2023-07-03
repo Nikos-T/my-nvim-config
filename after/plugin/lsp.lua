@@ -48,6 +48,7 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     bufopts.desc = "Go to definition"
 	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', '<leader>w', vim.lsp.buf.hover, bufopts)
 	-- vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
     bufopts.desc = "Go to implementation"
 	vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
@@ -87,6 +88,10 @@ require('lspconfig')['rust_analyzer'].setup({
 		vim.g.rustfmt_autosave = 1
 		-- vim.keymap.set("n", ":w", ":w|:!cargo fmt")
 	end
+})
+
+require('lspconfig')['tsserver'].setup({
+    on_attach = on_attach
 })
 
 lsp.on_attach = on_attach

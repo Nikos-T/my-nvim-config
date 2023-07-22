@@ -11,7 +11,8 @@ lsp.ensure_installed {
 	'tsserver',
 	'eslint',
 	'lua_ls',
-	'rust_analyzer'
+	'rust_analyzer',
+    'move_analyzer'
 }
 
 -- Fix Undefined global 'vim'
@@ -92,6 +93,11 @@ require('lspconfig')['rust_analyzer'].setup({
 
 require('lspconfig')['tsserver'].setup({
     on_attach = on_attach
+})
+
+require('lspconfig')['move_analyzer'].setup({
+    on_attach = on_attach,
+    cmd = { "~/.cargo/bin/move-analyzer" }
 })
 
 lsp.on_attach = on_attach

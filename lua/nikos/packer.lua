@@ -41,6 +41,17 @@ return require('packer').startup(function(use)
 	-- colorscheme material
 	use 'marko-cerovac/material.nvim'
 
+    -- colorscheme ayu
+    use 'Shatur/neovim-ayu'
+    -- use {
+    --     'ayu-theme/ayu-vim',
+    --     run = function()
+    --         vim.cmd('set termguicolors')
+    --         vim.cmd('let ayucolor="dark"')
+    --         vim.cmd('colorscheme ayu')
+    --     end,
+    -- }
+
 	-- treesitter
 	use {
 		'nvim-treesitter/nvim-treesitter',
@@ -125,4 +136,8 @@ return require('packer').startup(function(use)
 
     -- lsp-signature
     use 'ray-x/lsp_signature.nvim'
+
+    -- move (workaround, https did not work)
+    use 'git@github.com:tzakian/move.vim'
+    -- use 'rvmelkonian/move.vim'
 end)
